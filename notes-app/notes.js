@@ -1,3 +1,4 @@
+//const validator =  require('validator'); // importing a third party module - read documentation to look how to use it
 const getNotes = () => {
     return "Your notes...";
 }
