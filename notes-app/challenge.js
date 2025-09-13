@@ -20,6 +20,7 @@ const getNotes = require('./notes.js')
 const msg = getNotes()
 //console.log(msg)
 
+//installing npm packages locally
 const validator =  require('validator'); // importing a third party module - read documentation to look how to use it
 // console.log(validator.isEmail('aishwarya21gmail.com')) //true
 // console.log(validator.isURL('https:/mead.io')) //false
@@ -42,3 +43,4 @@ console.log(chalk.bold('Bold text'))
 console.log(chalk.italic('Italic text'))
 console.log(chalk.inverse('Inverse text'));// inverts the background and foreground colors
 console.log(chalk.strikethrough('Strikethrough text'));// adds a line through the text
+
