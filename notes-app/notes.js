@@ -1,5 +1,6 @@
 //const validator =  require('validator'); // importing a third party module - read documentation to look how to use it
 const fs = require('fs') 
+const chalk = require('chalk')
 const getNotes = () => {
     return "Your notes...";
 }
@@ -19,10 +20,25 @@ const addNote = (title,body) => {
             body: body
         })
         saveNotes(notes)
-        console.log('New note added!')
+        console.log(chalk.bgGreen('New note added!'))
     } else {
-        console.log('Note title taken!')
+        console.log(chalk.bgRed('Note title taken!'))
     }
+}
+
+const removeNote = (title) => {
+    const notes = loadNotes()
+    //notesToKeep is an array which contains all notes except the one with the title to be removed
+    const notesToKeep = notes.filter((note) => {
+        return note.title !== title
+    })
+    console.log(notesToKeep)
+    if (notes.length === notesToKeep.length){
+        console.log(chalk.bgRed('No note found!'))
+    } else {
+        console.log(chalk.bgGreen('Note removed!'))
+    }
+    saveNotes(notesToKeep)
 }
 
 const saveNotes = (notes) => {
@@ -36,7 +52,7 @@ const loadNotes = () => {
         //fetching existing notes
         const dataBuffer = fs.readFileSync('notes.json') //reading the file 
         const dataJSON = dataBuffer.toString() //converting buffer data to string
-    return JSON.parse(dataJSON) //converting string to object
+    return JSON.parse(dataJSON) //converting JSON string to object
     } catch(e){
         return [] //starts with empty error -  if file doesn't exist return empty array and then next time a new note is added it will create the file
     }
@@ -45,5 +61,6 @@ const loadNotes = () => {
 
 module.exports = { // exporting an object with getNotes property and getNotes function as its value
     getNotes: getNotes, // exporting the function so that it can be used in other files
-    addNote : addNote
+    addNote : addNote,
+    removeNote : removeNote
 }

@@ -56,8 +56,16 @@ yargs.command({ //command is a method of yargs which takes an object as argument
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
-    handler: function(){
+    destroyer:{
+        title: {
+            describe: 'Note title to remove',
+            demandOption: true,
+            type: 'string' // title should be string
+        }
+    },
+    handler: function(argv){
         console.log('Removing the note!')
+        notes.removeNote(argv.title) // calling removeNote function from notes.js file
     }
 })
 
