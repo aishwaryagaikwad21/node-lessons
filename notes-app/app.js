@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const yargs = require('yargs')
-const getNotes = require('./notes.js')
-const msg = getNotes()
+const notes = require('./notes.js'); //notes is an object with getNotes and addNote properties
+//const msg = getNotes()
 //console.log(msg)
 
 //console.log(process.argv[2]) // to see all the arguments passed in command line
@@ -46,8 +46,9 @@ yargs.command({ //command is a method of yargs which takes an object as argument
     },
     handler: function(argv){ //argv is used to access the options provided in command line
         //handler runs wuth argv
-        console.log('Title is: ' + argv.title) //argv contains all command-line arguments parsed by yargs
-        console.log('Body is: ' + argv.body)
+        //console.log('Title is: ' + argv.title) //argv contains all command-line arguments parsed by yargs
+        //console.log('Body is: ' + argv.body)
+        notes.addNote(argv.title,argv.body) // calling addNote function from notes.js file
     }
 })
 
