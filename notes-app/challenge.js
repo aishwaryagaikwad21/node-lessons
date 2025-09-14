@@ -1,4 +1,5 @@
 //first load the fs module
+//fs is a built-in core module - comes with node.js - no need to install separately
 //const fs = require('fs'); // load the fs module - inside a string pass the module name
 
 //fs.writeFileSync('notes.txt', 'My name is Aishwarya')
