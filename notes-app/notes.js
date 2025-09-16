@@ -77,13 +77,12 @@ const saveNotes = (notes) => {
 const loadNotes = () => {
     try{
         //fetching existing notes
-        const dataBuffer = fs.readFileSync('notes.json') //reading the file 
+        const dataBuffer = fs.readFileSync('notes.json') //reading the file which is in binary format 
         const dataJSON = dataBuffer.toString() //converting buffer data to string
     return JSON.parse(dataJSON) //converting JSON string to object
     } catch(e){
         return [] //starts with empty error -  if file doesn't exist return empty array and then next time a new note is added it will create the file
-    }
-    
+    }  
 }
 
 module.exports = { // exporting an object with getNotes property and getNotes function as its value

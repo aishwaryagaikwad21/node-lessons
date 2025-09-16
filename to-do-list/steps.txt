@@ -3,5 +3,14 @@ About NPM
     on our machine. This gives us access to everything over
     at npmjs.com 
 2. Before using any of these modules in our script, we take 2 steps
-    a.) we have to initialised NPM in our project
+    a.) we have to initialised NPM in our project 
     b.) we have to install all of the modules we actually want to use.
+
+npm init
+package name (deefault name)
+
+
+3. After defining commands, call 
+.parse() at the end to trigger parsing
+
+4. the one you learnt yargs was of 12.0.5 version
