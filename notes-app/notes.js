@@ -10,11 +10,12 @@ const addNote = (title,body) => {
     const notes = loadNotes()
     //console.log(notes)
     //checking for duplicate titles
-    const duplicateNote = notes.filter((note) => {
-        return note.title === title
-    })
+    // const duplicateNote = notes.filter((note) => { //this will check for each item even if we have found duplicate
+    //     return note.title === title
+    // })
+    const duplicateNote = notes.find((note) => note.title === title); //will return boolean undefined if not found --> more efficient way
 
-    if(duplicateNote.length === 0){
+    if(!duplicateNote){
         notes.push({
             title: title,
             body: body
@@ -41,6 +42,32 @@ const removeNote = (title) => {
     saveNotes(notesToKeep)
 }
 
+const listNotes = () => {
+    const listNotes = loadNotes();
+    //console.log(listNotes)
+    listNotes.forEach((listNote) => console.log(listNote.title))
+}
+
+const readNotes = (title) => {
+    const readNotes = loadNotes();
+    const note = readNotes.find((note) => note.title === title)
+    if(note){
+        console.log(chalk.bgGreen(note.body))
+    }
+    else{
+        console.log(chalk.bgRed("Note not found!"))
+    }
+    // return readNotes.filter((readNote) => {
+    //     if(readNote.title === title){
+    //         return readNote.body
+    //     } else {
+    //        return console.log(chalk.bgRed('Note not found'))
+           
+    //     }
+    // })
+    
+}
+
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes) // converting object to string
     fs.writeFileSync('notes.json',dataJSON) // writing string to a file
@@ -60,7 +87,9 @@ const loadNotes = () => {
 }
 
 module.exports = { // exporting an object with getNotes property and getNotes function as its value
-    getNotes: getNotes, // exporting the function so that it can be used in other files
+  //  getNotes: getNotes, // exporting the function so that it can be used in other files
     addNote : addNote,
-    removeNote : removeNote
+    removeNote : removeNote,
+    listNotes : listNotes,
+    readNotes : readNotes
 }

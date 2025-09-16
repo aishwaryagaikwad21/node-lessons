@@ -44,7 +44,7 @@ yargs.command({ //command is a method of yargs which takes an object as argument
             type: 'string' // body should be string
         }
     },
-    handler: function(argv){ //argv is used to access the options provided in command line
+    handler(argv){ //argv is used to access the options provided in command line
         //handler runs wuth argv
         //console.log('Title is: ' + argv.title) //argv contains all command-line arguments parsed by yargs
         //console.log('Body is: ' + argv.body)
@@ -63,7 +63,7 @@ yargs.command({
             type: 'string' // title should be string
         }
     },
-    handler: function(argv){
+    handler(argv){ //if function is method, using ES6 syntax
         console.log('Removing the note!')
         notes.removeNote(argv.title) // calling removeNote function from notes.js file
     }
@@ -73,8 +73,9 @@ yargs.command({
 yargs.command({
     command: 'list',
     describe: 'List your notes',
-    handler: function(){ //argv is used to access the options provided in command line
+    handler(){ //argv is used to access the options provided in command line
         console.log('Listing out all notes!')
+        notes.listNotes()
     }
 })
 
@@ -82,8 +83,15 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read a note',
-    handler: function(){
-        console.log('Reading the note!')
+    builder : {
+        title:{
+            describe:'Note to read',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler(argv){
+        notes.readNotes(argv.title)
     }
 })
 
