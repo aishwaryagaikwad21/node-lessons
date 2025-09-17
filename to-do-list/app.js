@@ -39,4 +39,19 @@ yargs.command({
         td.done(argv.title)
     }
 })
+
+yargs.command({
+    command:'delete',
+    description:'delete a task',
+    builder:{
+      title:{
+            describe:'task title',
+            demandOption:true,
+            type:'string'
+        }  
+    },
+    handler(argv){
+        td.deleteTask(argv.title)
+    }
+})
 yargs.parse()

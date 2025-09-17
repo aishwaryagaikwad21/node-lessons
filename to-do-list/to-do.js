@@ -32,6 +32,15 @@ const done = (title) => {
     saveList(tasks)
 }
 
+const deleteTask = (title) => {
+    const tasks = loadList();
+    const newList = tasks.filter((task) => task.title !== title)
+    //console.log(newList)
+    console.log(chalk.red(`${title} task deleted!`));
+    saveList(newList)
+    
+}
+
 
 const loadList = () =>{
     try{
@@ -51,5 +60,6 @@ const saveList = (list) => {
 
 module.exports = {
     add: add,
-    done:done
+    done:done,
+    deleteTask:deleteTask
 }

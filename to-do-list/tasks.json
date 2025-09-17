@@ -22,13 +22,5 @@
     {
         "title": "CSAT",
         "status": "pending"
-    },
-    {
-        "title": "cooking",
-        "status": "pending"
-    },
-    {
-        "title": "shopping",
-        "status": "pending"
     }
 ]
