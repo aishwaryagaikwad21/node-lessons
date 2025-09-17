@@ -21,8 +21,22 @@ yargs.command({
         }
     },
     handler(argv){
-        console.log('Adding the task...')
         td.add(argv.title,argv.status)
     }
 }) 
+
+yargs.command({
+    command:'done',
+    description:'marks done',
+    builder: {
+        title:{
+            describe:'task title',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler(argv){
+        td.done(argv.title)
+    }
+})
 yargs.parse()

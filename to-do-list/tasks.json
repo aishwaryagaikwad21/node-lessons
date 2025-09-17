@@ -5,11 +5,11 @@
     },
     {
         "title": "coding",
-        "status": "pending"
+        "status": "done"
     },
     {
         "title": "optional",
-        "status": "pending"
+        "status": "done"
     },
     {
         "title": "GS",
@@ -25,6 +25,10 @@
     },
     {
         "title": "cooking",
+        "status": "pending"
+    },
+    {
+        "title": "shopping",
         "status": "pending"
     }
 ]

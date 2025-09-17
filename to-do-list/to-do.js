@@ -1,18 +1,35 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+
 const add = (title,status) => {
     const list = loadList();
-    console.log(title,status)
-    console.log('Task added!')
+    // console.log(title,status)
+    // console.log('Task added!')
 
-    list.push({
-        title: title,
-        status: status
-    })
-
+    const isTask = list.find((list) => list.title === title)
+    if(!isTask){
+        list.push({
+            title: title,
+            status: status
+        })
+        console.log(chalk.bgGreen('Task added!'))
+    } else {
+        console.log(chalk.bgRed('Task already exists! Add another task'))
+    }
     saveList(list)
 
+}
+
+const done = (title) => {
+    const tasks = loadList();
+    tasks.find((task) => {
+        if(task.title === title && task.status === 'pending'){
+            task.status = 'done'
+            console.log(chalk.green('Good! Task done'))
+        }
+    })
+    saveList(tasks)
 }
 
 
@@ -33,5 +50,6 @@ const saveList = (list) => {
 }
 
 module.exports = {
-    add: add
+    add: add,
+    done:done
 }
