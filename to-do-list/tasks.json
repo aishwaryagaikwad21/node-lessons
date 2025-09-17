@@ -1,9 +1,5 @@
 [
     {
-        "title": "reading",
-        "status": "pending"
-    },
-    {
         "title": "coding",
         "status": "done"
     },
@@ -22,5 +18,9 @@
     {
         "title": "CSAT",
         "status": "pending"
+    },
+    {
+        "title": "gardening",
+        "status": "done"
     }
 ]

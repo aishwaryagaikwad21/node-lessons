@@ -54,4 +54,29 @@ yargs.command({
         td.deleteTask(argv.title)
     }
 })
+
+yargs.command({
+    command:'pending',
+    description:'pending tasks',
+    handler(){
+        td.pending()
+    }
+})
+
+yargs.command({
+    command:'completed',
+    description:'List of completed tasks',
+    handler(){
+        td.completed()
+    }
+})
+
+yargs.command({
+    command: 'list',
+    description:'lists all tasks',
+    handler(){
+        td.list()
+    }
+})
+
 yargs.parse()

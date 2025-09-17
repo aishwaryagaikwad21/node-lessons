@@ -41,6 +41,40 @@ const deleteTask = (title) => {
     
 }
 
+const pending = () => {
+    const tasks = loadList();
+    const pendingList = tasks.filter((task)=> task.status === 'pending')
+    console.log(chalk.bgRed('Pending tasks are as follow:'))
+    if(pendingList.length === 0){
+        console.log(chalk.bgGreen('Congrats! All tasks done.'))
+    } else {
+        pendingList.forEach((pending) => {
+            console.log(chalk.red(pending.title))
+        })
+    }
+}
+
+const completed = () => {
+    const tasks = loadList();
+    const completedList = tasks.filter((task) => task.status === 'done')
+    console.log(chalk.bgGreen('Completed tasks are as follow:'));
+    if(completedList.length === 0){
+        console.log(chalk.bgRed('NO Task completed'))
+    } else {
+        completedList.forEach((completed) => {
+            console.log(chalk.green(completed.title))
+        })
+    }
+}
+
+const list = () => {
+    const tasks = loadList();
+    console.log(chalk.bgWhite('All tasks listed'))
+    tasks.forEach((task) => {
+        console.log(chalk.white(task.title))
+    })
+}
+
 
 const loadList = () =>{
     try{
@@ -61,5 +95,8 @@ const saveList = (list) => {
 module.exports = {
     add: add,
     done:done,
-    deleteTask:deleteTask
+    deleteTask:deleteTask,
+    pending:pending,
+    completed:completed,
+    list:list
 }
