@@ -1,1 +1,35 @@
 Node Module system - you have to load sometimes before using things
+
+
+/*console.log('Starting')
+
+setTimeout(() =>{ //setTimeout takes 2 input (a function, time)
+    console.log('2 second timer')
+},2000)
+
+
+console.log('stopping')
+
+ Asynchronous code
+Starting
+stopping
+2 second timer*/
+
+console.log('Starting')
+
+setTimeout(() =>{ //setTimeout takes 2 input (a function, time)
+    console.log('2 second timer')
+},2000)
+
+setTimeout(()=>{
+    console.log('0 second timer')
+},0)
+
+
+console.log('stopping')
+/*
+Starting
+stopping
+0 second timer --> Why after 'stopping'? - None of the asynchronous function runs before the main function completes as they stay inside callback queue and wait till call stack empties
+2 second timer
+*/
