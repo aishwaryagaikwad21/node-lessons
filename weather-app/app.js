@@ -1,11 +1,13 @@
 const request = require('postman-request');
 
-const geoUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=los angeles&limit=1&appid=b28ec9be3d4c68ba6aad2fa08ac12ced'
+const geoUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=&limit=1&appid=b28ec9be3d4c68ba6aad2fa08ac12ced'
 
 request({url:geoUrl, json:true},(error,response) => {
     
-    if(error){
-        console.log('Unable to connect to weather service')
+    if(error){// for low level OS iss
+        console.log('Unable to connect to location service')
+    } else if(!response.body[0]){
+        console.log('Unable to find location, try another search')
     } else {
         const [lat,lon,name] = [response.body[0].lat,response.body[0].lon, response.body[0].name]
         //console.log(lat,lon,name)
