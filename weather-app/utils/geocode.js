@@ -3,7 +3,7 @@ const request = require('postman-request');
 const geoCode = (address, callback) => {
     const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(address)}&limit=1&appid=b28ec9be3d4c68ba6aad2fa08ac12ced`
     //encodeURIComponent if location has special character - this makes url safe
-    request({url:geoUrl, json:true},(error,response) => {
+    request({url:geoUrl, json:true},(error, response) => {
     
     if(error){// for low level OS 
         callback('Unable to connect to location services', undefined) //
