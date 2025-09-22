@@ -6,17 +6,19 @@ const address = process.argv[2]
 if(!address){
     console.log('Please provide an address')
 } else {
-        geoCode(address,(err, data) => { //callback chaining
+        geoCode(address,(err,{lat, lon, name, state, country} = {}) => { //callback chaining
+        //console.log(data)
         if(err){
             return console.log('Error', err)
         } 
             //console.log('Data', data)
-        forecast(data,(err,forecast) => {
+        forecast({lat, lon, name},(err,{name:location, temp, feelsLike} = {}) => {
             if(err){
                 console.log(err)
             } else {
-                console.log(data.name,data.state,data.country)
-                console.log(`The temperature of ${forecast.name} is ${forecast.temp.temperature} and feels like ${forecast.temp.feelslike}`)
+                console.log(name, state, country)
+               // console.log(forecast)
+                console.log(`The temperature of ${location} is ${temp} and feels like ${feelsLike}`)
             }
         }) 
     })

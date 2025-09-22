@@ -6,14 +6,15 @@ const forecast = (data, callback) => {
     const name = data.name
     const url = `http://api.weatherstack.com/current?access_key=ea797f0c26e77f60ee87ae3b81fd4f49&query=${lat},${lon}&units=f`
     
-        request({url:url, json:true},(error, response) => {
+        request({url, json:true},(error, response) => { //url - shorthand syntax
             if(error){
                 console.log('Unable to connect to weather service')
                 callback('Unable to connect to weather service',undefined)
             } else {
                 //const data = JSON.parse(response.body) since json:true it will be automatically an object/ parsed object
                 const data = {
-                    temp:response.body.current,
+                    temp:response.body.current.temperature,
+                    feelsLike: response.body.current.feelslike,
                     name:name
                 }
                 callback(undefined,data)
