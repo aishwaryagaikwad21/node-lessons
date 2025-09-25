@@ -1,0 +1,22 @@
+EXPRESS.JS
+1. to create web-server
+2. to create complex http json based api (for web-apps)
+3. install and use EXPRESS
+4. initialise npm to install 
+5. src folder - for all node scripts
+
+const express = require('express')
+const app = express() --> calling express
+    When you do express(), you are invoking that function.
+
+    It doesn’t need arguments (by default), 
+    because Express knows how to set up a new app instance 
+    by itself.
+
+    What it returns is an “app object” 
+    (an instance of an Express application).
+
+app is Express application which has many built in methods
+eg. app.get() - handles GET requests; app.post() - handle POST requests; app.use() - add middleware
+
+
