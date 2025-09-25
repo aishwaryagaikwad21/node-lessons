@@ -20,3 +20,46 @@ app is Express application which has many built in methods
 eg. app.get() - handles GET requests; app.post() - handle POST requests; app.use() - add middleware
 
 
+//creating routes
+// app.com - root route
+// app.com/help
+// app.com/about
+//send response when someone tries to get something at specific route
+
+app.get('',(req, res) => {  //2 arguments to callback function - url, function - what to do when someone visit this route
+    //req is an object - contains info about incoming request
+    //res - response has methods allows to customise what we send back to requester
+    res.send('<h1>Weather</h1>')
+})
+
+// app.get('/help',(req, res) => {
+//     res.send([
+//         { //sending an array of objects - express automatically stringifies to JSON
+//             name:'Aishwarya',
+//             age:25
+//         },
+//         {
+//             name: 'xyz'
+//         }
+//     ])
+// })
+
+// app.get('/about', (req, res) => {
+//     res.send('<h1>Learn more about us</h1>')
+// })
+
+/* on localhost:3000 it went to the server and the express server found the
+matching route (root) and processed the request using handler
+and it sends response 'Hello Express' */
+
+//console.log(__dirname) //path to directory where current script lives in - string manipulation to change the directory
+//console.log(__filename) //app.js - path to file itself
+//console.log(path.join(__dirname, '../public'))
+
+PATH module - core node module
+1. for working with file and directory paths
+2.It helps you handle paths in a way that works across all operating systems (Windows uses \ while Linux/Mac uses /).
+❌ Bad way:
+    const filePath = 'C:\\Users\\project\\file.txt'; // Windows only
+✅ Good way with path: - works on any OS
+    const filePath = path.join('C:', 'Users', 'project', 'file.txt');
