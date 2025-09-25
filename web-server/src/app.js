@@ -5,12 +5,17 @@ const path = require('path') //core node module
 const app = express() //express function doesn't take any argument
 //app is an object to build web server
 
-//setting route to deliver handlebar
-app.set('view engine', 'hbs'); //npm handlebars - render dynamic templates
-
+//define paths for Express config - sends static html pages
 const publicDirectory = path.join(__dirname, '../public')
-app.use(express.static(publicDirectory)) //to serve that directory (index.html, about.html, help.html)
+app.use(express.static(publicDirectory)) //to serve that directory static html (index.html, about.html, help.html)
 //customise web server
+
+//setting route to deliver handlebar and views location (templates)
+app.set('view engine', 'hbs'); //npm handlebars - render dynamic templates
+const viewsPath = path.join(__dirname, '../templates') //defines path for Express config
+app.set('views', viewsPath)
+
+
 
 const data = {
     title:'Weather App',
