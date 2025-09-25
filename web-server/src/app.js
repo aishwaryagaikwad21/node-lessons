@@ -1,18 +1,44 @@
 const express = require('express'); //express is a function not an object
 //web servers don't stop after completing the task.. it listens and process incoming request
-
 const path = require('path') //core node module
  
 const app = express() //express function doesn't take any argument
 //app is an object to build web server
 
+//setting route to deliver handlebar
+app.set('view engine', 'hbs'); //npm handlebars - render dynamic templates
+
 const publicDirectory = path.join(__dirname, '../public')
 app.use(express.static(publicDirectory)) //to serve that directory (index.html, about.html, help.html)
 //customise web server
 
+const data = {
+    title:'Weather App',
+    name:'Aishwarya',
+    message:'This is a weather app',
+    about:'About Us',
+    help: 'Help'
+}
+
 //get method to send html or json
-app.get('',(req, res) => {  
-    res.send('<h1>Weather</h1>')
+// app.get('',(req, res) => {  
+//     res.render('index', { //2nd argument is object
+//         title:'weather App',
+//         name:'Aishwarya'
+//     }) //express renders views - index.hbs file --> converts it into html
+// })
+
+//shortcut
+app.get('', (req, res) => {
+    res.render('index', data)
+})
+
+app.get('/about',(req,res)=>{
+    res.render('about', data)
+})
+
+app.get('/help', (req, res) => {
+    res.render('help', data)
 })
 
 app.get('/weather', (req, res) => { //frontend app will get data from backend using this
