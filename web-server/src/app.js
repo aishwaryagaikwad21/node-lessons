@@ -1,6 +1,7 @@
 const express = require('express'); //express is a function not an object
 //web servers don't stop after completing the task.. it listens and process incoming request
 const path = require('path') //core node module
+const hbs = require('hbs')
  
 const app = express() //express function doesn't take any argument
 //app is an object to build web server
@@ -10,10 +11,15 @@ const publicDirectory = path.join(__dirname, '../public')
 app.use(express.static(publicDirectory)) //to serve that directory static html (index.html, about.html, help.html)
 //customise web server
 
+const partialsPath = path.join(__dirname, '../templates/partials')
+hbs.registerPartials(partialsPath) //take path to directory of partials
+
 //setting route to deliver handlebar and views location (templates)
 app.set('view engine', 'hbs'); //npm handlebars - render dynamic templates
-const viewsPath = path.join(__dirname, '../templates') //defines path for Express config
+const viewsPath = path.join(__dirname, '../templates/views') //defines path for Express config
 app.set('views', viewsPath)
+
+
 
 
 

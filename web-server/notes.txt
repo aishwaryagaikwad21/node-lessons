@@ -63,3 +63,9 @@ PATH module - core node module
     const filePath = 'C:\\Users\\project\\file.txt'; // Windows only
 ✅ Good way with path: - works on any OS
     const filePath = path.join('C:', 'Users', 'project', 'file.txt');
+
+PARTIALS with handlers
+    - allows to create template which is part of bigger site
+    - you will be using it at multiple places
+    - Eg. Header and Footer
+    - use command nodemon app.js -e js,hbs
