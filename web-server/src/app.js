@@ -19,17 +19,13 @@ app.set('view engine', 'hbs'); //npm handlebars - render dynamic templates
 const viewsPath = path.join(__dirname, '../templates/views') //defines path for Express config
 app.set('views', viewsPath)
 
-
-
-
-
-const data = {
-    title:'Weather App',
-    name:'Aishwarya',
-    message:'This is a weather app',
-    about:'About Us',
-    help: 'Help'
-}
+// const data = {
+//     title:'Weather App',
+//     name:'Aishwarya',
+//     message:'This is a weather app',
+//     about:'About Us',
+//     help: 'Help'
+// }
 
 //get method to send html or json
 // app.get('',(req, res) => {  
@@ -41,15 +37,25 @@ const data = {
 
 //shortcut
 app.get('', (req, res) => {
-    res.render('index', data)
+    res.render('index', {
+        title:'Weather App',
+        name:'Aishwarya'
+    })
 })
 
 app.get('/about',(req,res)=>{
-    res.render('about', data)
+    res.render('about', {
+        title:'About me',
+        name:'Aishwarya'
+    })
 })
 
 app.get('/help', (req, res) => {
-    res.render('help', data)
+    res.render('help', {
+        title:'Help',
+        name:'Aishwarya',
+        message:'This is a weather app'
+    })
 })
 
 app.get('/weather', (req, res) => { //frontend app will get data from backend using this
