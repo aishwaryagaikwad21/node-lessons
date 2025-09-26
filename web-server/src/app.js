@@ -59,18 +59,35 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => { //frontend app will get data from backend using this
+    const address = req.query.address
+    if(!address){
+        return res.send({
+            error: 'Please provide an address'
+        })
+    }
     res.send([
         {
-            location:'Mumbai',
+            location: address,
             temperature:34,
             forecast:'Hot and Humid'
         },
-        {
-            location:'Thane',
-            temperature:30,
-            forecast:'Humid'
-        }
     ])
+})
+
+//creating endpoint to pass query string (/product?key=value&key=value) - products?search='game'&rating=4.5
+app.get('/products', (req, res) => {
+    // console.log(req.query) //query is an object --> { search: "'game'", rating: '4.5' } --> query string passed along with request has been parsed by Express
+    // console.log(req.query.search)//game - grabbing individual key
+    if(!req.query.search){
+       return res.send({
+            error: 'You must provide a search term'
+        })
+    } 
+    //error in terminal if no return in 'if block' Cannot set headers after they are sent to the client
+    //as we can only send http request and respond once only - you cannot send 2 responses so just add return in 'if block'
+    res.send({
+        products:[]
+    })
 })
 
 //specific 404 page (help/data)

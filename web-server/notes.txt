@@ -69,3 +69,5 @@ PARTIALS with handlers
     - you will be using it at multiple places
     - Eg. Header and Footer
     - use command nodemon app.js -e js,hbs
+
+Accessing API from browser
