@@ -37,8 +37,9 @@ const product = {
 //     const {label} = myProduct
 // }
 //OR
-
-const transaction = (type, { label, stock}) => { //can directly destructure here
+ //also setting default object ( ={}) --> destructures empty object
+const transaction = (type, { label, stock = 0} = {}) => { //can directly destructure here
     console.log(type, label, stock)    
 }
-transaction('order', product)
+//transaction('order', product)
+transaction('order')

@@ -13,9 +13,11 @@ const forecast = (data, callback) => {
             } else {
                 //const data = JSON.parse(response.body) since json:true it will be automatically an object/ parsed object
                 //console.log(response)
+                console.log(response.body.current.temperature)
                 const data = {
-                    temp:response.body.current.temperature,
+                    temp: response.body.current.temperature,
                     feelsLike: response.body.current.feelslike,
+                    forecast: response.body.current.weather_descriptions[0],
                     location:name
                 }
                 callback(undefined,data)
