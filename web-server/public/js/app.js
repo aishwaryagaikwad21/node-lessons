@@ -13,7 +13,26 @@ fetch('https://puzzle.mead.io/puzzle')
             })
     })
 
-fetch('http://localhost:3000/weather?address=mumbai')
+// fetch('http://localhost:3000/weather?address=mumbai')
+//     .then((res) => {
+//         res.json()
+//             .then((data) => {
+//                 if(data.error){
+//                     console.log(data.error.info)
+//                 } else{
+//                 console.log(data.location)
+//                 }
+//             })
+//     })
+
+const weatherForm = document.querySelector('form')
+const search = document.querySelector('input')
+
+weatherForm.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+    const location = search.value
+    console.log(location)
+    fetch(`http://localhost:3000/weather?address=${location}`)
     .then((res) => {
         res.json()
             .then((data) => {
@@ -24,3 +43,6 @@ fetch('http://localhost:3000/weather?address=mumbai')
                 }
             })
     })
+
+    console.log('Testing!')
+})
