@@ -2,6 +2,8 @@ const express = require('express'); //express is a function not an object
 //web servers don't stop after completing the task.. it listens and process incoming request
 const path = require('path') //core node module
 const hbs = require('hbs')
+const geoCode = require('./utils/geocode.js')
+const forecast = require('./utils/forecast.js')
  
 const app = express() //express function doesn't take any argument
 //app is an object to build web server
@@ -59,19 +61,28 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => { //frontend app will get data from backend using this
-    const address = req.query.address
+    const address = req.query.address //grabs the query string 
     if(!address){
         return res.send({
             error: 'Please provide an address'
         })
     }
-    res.send([
-        {
-            location: address,
-            temperature:34,
-            forecast:'Hot and Humid'
-        },
-    ])
+    geoCode(address, (err, data) => {
+        if(err){
+            return res.send({
+                error: err
+            })
+        }
+       //console.log(data)
+        forecast(data,(err, temp) => {
+            if(err){
+                return res.send({
+                    error:err
+                })
+            }
+            res.send([temp])
+        })
+    })
 })
 
 //creating endpoint to pass query string (/product?key=value&key=value) - products?search='game'&rating=4.5
