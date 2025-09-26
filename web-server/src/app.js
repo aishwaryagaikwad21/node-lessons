@@ -73,6 +73,26 @@ app.get('/weather', (req, res) => { //frontend app will get data from backend us
     ])
 })
 
+//specific 404 page (help/data)
+app.get('/help/*', (req, res) => { //handle specific errors
+    //res.send('Help article not found!')
+    res.render('helpError',{
+        title:'404',
+        name:'Aishwarya',
+        errorMsg:'Help article not found'
+    })
+})
+
+//generic 404 page
+app.get('*',(req, res) => { //has to come last - No page exists
+    //res.send('My 404 page')
+    res.render('genericError', {
+        title:'404',
+        name:'Aishwarya',
+        errorMsg: 'Page not found'
+    })
+})
+
 //to start server
 app.listen(3000, () => { //process of starting server is asynchronous process
     console.log('Server is up on port 3000.')
