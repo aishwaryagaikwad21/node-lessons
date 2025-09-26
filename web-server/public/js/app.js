@@ -27,6 +27,8 @@ fetch('https://puzzle.mead.io/puzzle')
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
+const msg1 = document.querySelector('#msg1')
+const msg2 = document.querySelector('#msg2')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault(); 
@@ -39,7 +41,8 @@ weatherForm.addEventListener('submit', (e) => {
                 if(data.error){
                     console.log(data.error.info)
                 } else{
-                console.log(data.location)
+                msg1 = data.location
+                msg2 = data.forecast
                 }
             })
     })
