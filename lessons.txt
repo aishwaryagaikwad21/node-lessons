@@ -33,3 +33,40 @@ stopping
 0 second timer --> Why after 'stopping'? - None of the asynchronous function runs before the main function completes as they stay inside callback queue and wait till call stack empties
 2 second timer
 */
+
+
+BASIC ROUTING
+    Routing means how an application responds to a client
+    request to a particular endpoint like URL and a 
+    specific HTTP request method (GET, POST, etc)
+
+    app.METHOD(PATH, HANDLER)
+    
+    app is an instance of express
+    METHOD is an HTTP request method - get, POST, put, delete
+    PATH - is a path on the server
+    Handler - is the function executed when the route is matched
+    https://expressjs.com/en/5x/api.html#app.METHOD
+
+RESPONSE methods
+    res - response object that can be send to client
+    If none of these methods are called from a route handler,
+     the client request will be left hanging.
+
+     eg. res.download(), res.end(), json(), redirect(),
+     render() - render a view template
+     re.send(), res.sendFile()
+
+app.route()
+    you can create chainable route handlers 
+    creating modular routes is helpful, as is reducing redundancy and typos.
+    app.route('/book')
+  .get((req, res) => {
+    res.send('Get a random book')
+  })
+  .post((req, res) => {
+    res.send('Add a book')
+  })
+  .put((req, res) => {
+    res.send('Update the book')
+  })
