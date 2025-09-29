@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
+const filePath = path.join(__dirname,'./notes.json')
+
 // Load notes
 function loadNotes() {
     try {
@@ -60,10 +62,26 @@ function getNotes(){
     return loadNotes();
 }
 
+//Update notes
+
+function updateNote(title, newDetails){
+    const notes = loadNotes();
+    const index = notes.findIndex(note => note.title === title);
+
+    if (index === -1) {
+        return { error: 'Note not found!' };
+    }
+
+    notes[index] = { ...notes[index], ...newDetails };
+    saveNotes(notes);
+    return { success: 'Note updated successfully!' };
+}
+
 
 module.exports = {
     addNote,
     deleteNote,
     readNote,
-    getNotes
+    getNotes,
+    updateNote
 }
