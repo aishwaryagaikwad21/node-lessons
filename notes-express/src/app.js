@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const hbs = require('hbs')
 const notes = require('./utils/notes')
 
 const app = express();
@@ -7,8 +8,19 @@ const app = express();
 //enable JSON parsin (for POST/PUT requests)
 app.use(express.json());
 
+const publicDirectory = path.join(__dirname,'../public')
+app.use(express.static(publicDirectory))
+
+const partialsPath = path.join(__dirname, '../templates/partials')
+hbs.registerPartials(partialsPath) //take path to directory of partials
+
+//setting route to deliver handlebar and views location (templates)
+app.set('view engine', 'hbs'); //npm handlebars - render dynamic templates
+const viewsPath = path.join(__dirname, '../templates/views') //defines path for Express config
+app.set('views', viewsPath)
+
 app.get('', (req, res) => {
-    res.send({
+    res.render('index', {
         title:'Notes app',
         name:'Aishwarya'
     })
