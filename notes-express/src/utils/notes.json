@@ -5,8 +5,33 @@
     "details": "In evening"
   },
   {
+    "title": "Polity",
+    "description": "Union Executive",
+    "details": "President, PM, CoM"
+  },
+  {
+    "title": "Coding",
+    "description": "Node",
+    "details": "APIs"
+  },
+  {
+    "title": "Reading",
+    "description": "Harry Potter",
+    "details": "Goblet of Fire"
+  },
+  {
+    "title": "Writing",
+    "description": "Essay",
+    "details": "Climate Change"
+  },
+  {
+    "title": "Listening",
+    "description": "Music",
+    "details": "Country Roads"
+  },
+  {
     "title": "Cooking",
     "description": "Sandwich",
-    "details": "Cuccumber, tomato, capsicum, mayo, butter"
+    "details": "Bread, mayo, veggies"
   }
 ]

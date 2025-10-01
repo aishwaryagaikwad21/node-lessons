@@ -69,7 +69,58 @@ const deleteNote = (title, safeId) => {
     .catch(err => console.log('Error:', err))
 }
 
+const displayForm = () => {
+    const addnote = document.getElementById('displayForm')
+    addnote.style.display = 'block'
+    document.getElementById('noteForm').reset();
+}
+
+
+
 const addNote = () => {
     console.log('ADDING new note')
+    const title = document.getElementById('title').value.trim();
+    const description = document.getElementById('description').value.trim();
+    const details = document.getElementById('details').value.trim();
+
+    // Log them to verify
+    console.log("Title:", title);
+    console.log("Description:", description);
+    console.log("Details:", details);
+
+    if (!title || !description || !details) {
+        alert("Please fill in all fields before submitting!");
+        return;
+    }
+
+    const note = {
+        title,
+        description,
+        details
+    }
+
+    //sending to backend to save data
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(note)
+    })
+    .then(res => res.json())
+    .then(data => console.log("Note added:", data))
+    .catch(err => console.error("Error:", err));
+
+    //rendering to UI
+    fetch(url)
+    .then(res => res.json())
+    .then((data) => {
+        displayData(data)
+    })
+    .catch((err) => {
+        // Network or parsing error
+        console.error('Fetch failed:', err.message);
+    });
+    document.getElementById('noteForm').reset();
+    const addnote = document.getElementById('displayForm')
+    addnote.style.display = 'none'
 }
 
