@@ -13,7 +13,7 @@ fetch(url)
     });
 
 const displayData = (data) => {
-    console.log(data)
+    //console.log(data)
     const notesContainer = document.getElementById('accordionExample')
     const notesHTML = data.map(note => {
         const safeId = note.title.replace(/\s+/g, '-').toLowerCase();
@@ -36,9 +36,23 @@ const displayData = (data) => {
                     <strong>${note.description}</strong>
                     <p>${note.details}</p>
                 </div>
+                <button type="button" class="btn btn-outline-primary" id="btn-upd-${safeId}" onclick="updateNote()">Update</button>
+                <button type="button" class="btn btn-outline-danger" id="btn-dng-${safeId}" onclick="deleteNote()" >Delete</button> <br>
             </div>
         </div>
         `; }).join(''); //.join('') concatenates all array elements into a single string with no separator:
     notesContainer.innerHTML = notesHTML
+}
+
+const updateNote = () => {
+    console.log('Listening to update event')
+}
+
+const deleteNote = () => {
+    console.log('Listening DELETE note event')
+}
+
+const addNote = () => {
+    console.log('ADDING new note')
 }
 

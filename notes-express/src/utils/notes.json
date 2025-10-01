@@ -18,5 +18,10 @@
     "title": "Cooking",
     "description": "Sandwich",
     "details": "Cuccumber, tomato, capsicum, mayo, butter"
+  },
+  {
+    "title": "Polity",
+    "description": "Union Executive",
+    "details": "President, PM, CoM"
   }
 ]
