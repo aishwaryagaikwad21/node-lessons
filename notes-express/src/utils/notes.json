@@ -1,27 +1,12 @@
 [
   {
-    "title": "Optional",
-    "description": "Equality",
-    "details": "by Dworkin"
-  },
-  {
     "title": "Current Affairs",
     "description": "NP, Mag, others",
     "details": "In evening"
   },
   {
-    "title": "Coding",
-    "description": "Express",
-    "details": "Complete CRUD notes app APIs"
-  },
-  {
     "title": "Cooking",
     "description": "Sandwich",
     "details": "Cuccumber, tomato, capsicum, mayo, butter"
-  },
-  {
-    "title": "Polity",
-    "description": "Union Executive",
-    "details": "President, PM, CoM"
   }
 ]
