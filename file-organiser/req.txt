@@ -1,0 +1,4 @@
+	• Upload or add files (simulate with file names in JSON).
+	• Categorize by file type (.txt, .pdf, .jpg).
+	• Create Express routes /files/docs, /files/images, etc.
+	• Render list of files in each category.

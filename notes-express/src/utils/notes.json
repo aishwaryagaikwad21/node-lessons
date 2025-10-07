@@ -1,10 +1,5 @@
 [
   {
-    "title": "Current Affairs",
-    "description": "NP, Mag, others",
-    "details": "In evening"
-  },
-  {
     "title": "Coding",
     "description": "Javascript",
     "details": "Asynchronous programming"
@@ -18,5 +13,10 @@
     "title": "Listening",
     "description": "Music",
     "details": "Forever"
+  },
+  {
+    "title": "Corals",
+    "description": "Coral Triangle",
+    "details": "Coral Triangle - Indonesia, Malaysia, Papua New Guinea, the Philippines, the Solomon Islands, and Timor-Leste \nHas more than three-quarters of the world's coral species \nHas a third of all reef fish \n Vast mangrove forests \nSustains the food security and livelihoods of more than 120 million people ○ without drastic action to keep global warming to 1.5º C, 70-90% of live coral cover could be lost by 2050. ○ According to the UN Environment Programme, ocean temperatures may take decades to stabilise even under the most ambitious climate targets, leaving coral ecosystems dangerously exposed in the interim. - Solutions ○ Coral Larvae cryobank § Philippines is preparing to host Southeast Asia’s first coral larvae cryobank to help restore and protect reefs § facility will freeze and preserve coral larvae — the small, free swimming “seeds” of corals — at very low temperatures. These larvae can later be used to revive damaged reefs or for research, thus protecting genetic diversity that might otherwise be lost"
   }
 ]

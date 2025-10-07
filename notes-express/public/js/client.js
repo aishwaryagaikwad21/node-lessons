@@ -35,13 +35,14 @@ const displayData = (data) => {
                 <div class="accordion-body">
                     <strong>${note.description}</strong>
                     <p>${note.details}</p>
-                </div>
                 <button type="button" class="btn btn-outline-primary" id="btn-upd-${safeId}" onclick="updateNote('${note.title}','${safeId}')">Update</button>
                 <button type="button" class="btn btn-outline-danger" id="btn-dng-${safeId}" onclick="deleteNote('${note.title}','${safeId}')" >Delete</button> <br> 
-            </div>
+                </div>
+                </div>
         </div>
         `; }).join(''); //.join('') concatenates all array elements into a single string with no separator:
     notesContainer.innerHTML = notesHTML
+    
 }
 //deleteNote('${note.title}')" --> note.title is a string and pass it with quotes
 
