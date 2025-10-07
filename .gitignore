@@ -1,3 +1,4 @@
 web-server/node_modules/
 notes-express/node_modules
 file-organiser/node_modules
+file-organiser/package-lock.json
