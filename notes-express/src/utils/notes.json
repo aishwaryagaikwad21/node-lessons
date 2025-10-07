@@ -5,14 +5,9 @@
     "details": "In evening"
   },
   {
-    "title": "Polity",
-    "description": "Union Executive",
-    "details": "President, PM, CoM"
-  },
-  {
     "title": "Coding",
-    "description": "Node",
-    "details": "APIs"
+    "description": "Javascript",
+    "details": "Asynchronous programming"
   },
   {
     "title": "Reading",
@@ -20,18 +15,8 @@
     "details": "Goblet of Fire"
   },
   {
-    "title": "Writing",
-    "description": "Essay",
-    "details": "Climate Change"
-  },
-  {
     "title": "Listening",
     "description": "Music",
-    "details": "Country Roads"
-  },
-  {
-    "title": "Cooking",
-    "description": "Sandwich",
-    "details": "Bread, mayo, veggies"
+    "details": "Forever"
   }
 ]

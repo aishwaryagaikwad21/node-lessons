@@ -46,10 +46,48 @@ const displayData = (data) => {
 //deleteNote('${note.title}')" --> note.title is a string and pass it with quotes
 
 const updateNote = (title, safeId) => {
-    
-    const noteAcc = document.getElementById(`acc-item-${safeId}`)
-    console.log(noteAcc)
-    console.log('Listening to update event', title)
+     const noteElement = document.getElementById(`acc-item-${safeId}`);
+    const description = noteElement.querySelector('.accordion-body strong').innerText;
+    const details = noteElement.querySelector('.accordion-body p').innerText;
+
+    // Fill modal fields
+    document.getElementById('updateTitle').value = title;
+    document.getElementById('updateDescription').value = description;
+    document.getElementById('updateDetails').value = details;
+
+    // Store current note id (for saving)
+    window.currentNoteSafeId = safeId;
+
+    // Show the modal
+    const modal = new bootstrap.Modal(document.getElementById('updateNoteModal'));
+    modal.show();
+}
+
+function saveUpdatedNote() {
+    const title = document.getElementById('updateTitle').value;
+    const description = document.getElementById('updateDescription').value;
+    const details = document.getElementById('updateDetails').value;
+
+    fetch(`http://localhost:3000/notes/${encodeURIComponent(title)}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, description, details })
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log('Updated:', data);
+
+        // Update UI directly
+        const safeId = window.currentNoteSafeId;
+        const noteElement = document.getElementById(`acc-item-${safeId}`);
+        noteElement.querySelector('.accordion-body strong').innerText = description;
+        noteElement.querySelector('.accordion-body p').innerText = details;
+
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('updateNoteModal'));
+        modal.hide();
+    })
+    .catch(err => console.error('Error updating:', err));
 }
 
 const deleteNote = (title, safeId) => {
