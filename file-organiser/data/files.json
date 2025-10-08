@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "filename": "notes.txt",
+    "ext": ".txt",
+    "category": "docs",
+    "size": 1024,
+    "uploadedAt": "2025-10-01T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "filename": "assignment.pdf",
+    "ext": ".pdf",
+    "category": "docs",
+    "size": 23456,
+    "uploadedAt": "2025-09-30T09:30:00Z"
+  },
+  {
+    "id": "3",
+    "filename": "sunset.JPG",
+    "ext": ".jpg",
+    "category": "images",
+    "size": 345678,
+    "uploadedAt": "2025-09-29T18:00:00Z"
+  },
+  {
+    "id": "4",
+    "filename": "podcast.mp3",
+    "ext": ".mp3",
+    "category": "audio",
+    "size": 789012,
+    "uploadedAt": "2025-09-28T07:25:00Z"
+  },
+  {
+    "id": "5",
+    "filename": "archive.tar.gz",
+    "ext": ".gz",
+    "category": "others",
+    "size": 45678,
+    "uploadedAt": "2025-09-15T12:00:00Z"
+  }
+]
