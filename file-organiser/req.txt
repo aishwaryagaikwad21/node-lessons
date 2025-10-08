@@ -2,3 +2,22 @@
 	• Categorize by file type (.txt, .pdf, .jpg).
 	• Create Express routes /files/docs, /files/images, etc.
 	• Render list of files in each category.
+app.js - main entry point - starts the server and connects everything
+routes/ - defines which URLs exist and which functions handle them
+controllers/ - contains the ACTUAL LOGIC for those functions - reading, writing, rendering views, partials
+
+app.js
+	- entry point that configures the server
+	- import express and middleware - e.g. app.use(express.json())
+	- Load routers - app.use('/files', filesRouter)
+	- Set the view engine
+	- Start the server -> app.listen(3000)
+
+routes/file.js
+	- defines endpoints (URLs) related to files and tells Express 
+		which controller function should run when that route is hit
+
+controllers/fileController.js
+	- Contains LOGIC for routes
+	- Functions for reading/writing data
+	- Read JSON, filter files, return response
