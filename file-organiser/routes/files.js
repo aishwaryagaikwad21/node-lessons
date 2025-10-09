@@ -15,4 +15,10 @@ router.get('/:category', (req, res) => {
     res.json(fileController.getFilesByCategory(category));
 })
 
+//GET /files/id/:id - get file by id
+router.get('/id/:id', (req, res) => {
+    const id = req.params.id;
+    res.json(fileController.getFileById(id));
+})
+
 module.exports = router;

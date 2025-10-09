@@ -35,7 +35,18 @@ function getFilesByCategory(category) {
 }
 //console.log(getFilesByCategory('docs'))
 
+function getFileById(id) {
+    const files = loadFiles();
+    const file = files.find((file) => file.id === id)
+    if(!file){
+        return {message: "File not found"}
+    }
+    return file;
+}
+//console.log(getFileById('2'))
+
 module.exports = {
     getFiles,
-    getFilesByCategory
+    getFilesByCategory,
+    getFileById
 }
