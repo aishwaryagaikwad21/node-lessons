@@ -23,7 +23,19 @@ function getFiles() {
     return loadFiles();
 }
 
+//get files by category
+function getFilesByCategory(category) {
+    const files = loadFiles();
+    //console.log(files);
+    const cat = files.filter((file) => file.category === category);
+    if(cat.length === 0){
+        return {message: "No files found in this category"}
+    }
+    return cat;
+}
+//console.log(getFilesByCategory('docs'))
 
 module.exports = {
-    getFiles
+    getFiles,
+    getFilesByCategory
 }
