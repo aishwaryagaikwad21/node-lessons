@@ -68,7 +68,6 @@ function addFile(fileName, size){
 
   files.push(file);
   saveFiles(files)
-  console.log('File added:', file);
   return {
     message: 'File added successfully',
     file

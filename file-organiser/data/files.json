@@ -62,5 +62,13 @@
     "category": "docs",
     "size": 1245,
     "uploadedAt": "2025-10-09T09:25:01.592Z"
+  },
+  {
+    "id": 9,
+    "filename": "tree.png",
+    "ext": ".png",
+    "category": "images",
+    "size": 124,
+    "uploadedAt": "2025-10-09T09:26:22.468Z"
   }
 ]
