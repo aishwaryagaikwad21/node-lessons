@@ -74,9 +74,25 @@ function addFile(fileName, size){
   }
 }
 
+//DELETE /files/:id - delete a file by id
+function deleteFile(id){
+    const files = loadFiles();
+    const index = files.findIndex((file) => file.id === id);
+    if(index === -1){
+        return {message: "File not found"}
+    }
+    const deletedFile = files.splice(index, 1);
+    saveFiles(files);
+    return {
+        message: "File deleted successfully",
+        deletedFile
+    }
+}
+
 module.exports = {
     getFiles,
     getFilesByCategory,
     getFileById,
-    addFile
+    addFile,
+    deleteFile
 }

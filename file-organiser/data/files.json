@@ -1,13 +1,5 @@
 [
   {
-    "id": "1",
-    "filename": "notes.txt",
-    "ext": ".txt",
-    "category": "docs",
-    "size": 1024,
-    "uploadedAt": "2025-10-01T10:00:00Z"
-  },
-  {
     "id": "2",
     "filename": "assignment.pdf",
     "ext": ".pdf",

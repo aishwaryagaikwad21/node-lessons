@@ -27,4 +27,10 @@ router.post('/add', (req, res) => {
     res.json(fileController.addFile(filename, size));
 })
 
+//DELETE /files/:id - delete a file by id
+router.delete('/delete/:id', (req, res) => {
+    const id = req.params.id;
+    res.json(fileController.deleteFile(id));
+})
+
 module.exports = router;
