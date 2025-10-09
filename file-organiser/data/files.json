@@ -38,5 +38,29 @@
     "category": "others",
     "size": 45678,
     "uploadedAt": "2025-09-15T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "filename": "example.pdf",
+    "ext": ".pdf",
+    "category": "docs",
+    "size": 12345,
+    "uploadedAt": "2025-10-09T09:18:36.870Z"
+  },
+  {
+    "id": 7,
+    "filename": "stars.jpg",
+    "ext": ".jpg",
+    "category": "images",
+    "size": 123,
+    "uploadedAt": "2025-10-09T09:19:19.504Z"
+  },
+  {
+    "id": 8,
+    "filename": "learn.pdf",
+    "ext": ".pdf",
+    "category": "docs",
+    "size": 1245,
+    "uploadedAt": "2025-10-09T09:25:01.592Z"
   }
 ]

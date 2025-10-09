@@ -21,4 +21,10 @@ router.get('/id/:id', (req, res) => {
     res.json(fileController.getFileById(id));
 })
 
+//POST /files - add a new file
+router.post('/add', (req, res) => {
+    const { filename, size } = req.body;
+    res.json(fileController.addFile(filename, size));
+})
+
 module.exports = router;

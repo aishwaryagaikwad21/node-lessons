@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const categorize = require('./categorise');
+const assignId = require('./assign-id');
+const { v4: uuidv4 } = require('uuid');
 
 // Define the path to the JSON file
 const filePath = path.join(__dirname, '../data/files.json');
@@ -45,8 +48,36 @@ function getFileById(id) {
 }
 //console.log(getFileById('2'))
 
+
+// POST /files - add a new file
+function addFile(fileName, size){
+    if (!fileName || typeof fileName !== 'string') {
+    return res.status(400).json({ error: 'filename required' });
+  }
+
+  const files = loadFiles();
+
+  const file = {
+    id: assignId(),
+    filename: fileName.trim(),
+    ext: path.extname(fileName).toLowerCase(),
+    category: categorize(fileName),
+    size: size || null,
+    uploadedAt: new Date().toISOString()
+  }
+
+  files.push(file);
+  saveFiles(files)
+  console.log('File added:', file);
+  return {
+    message: 'File added successfully',
+    file
+  }
+}
+
 module.exports = {
     getFiles,
     getFilesByCategory,
-    getFileById
+    getFileById,
+    addFile
 }
