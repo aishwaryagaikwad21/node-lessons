@@ -14,7 +14,7 @@ function loadFiles() {
 
 function assignId() {
     const files = loadFiles();
-    const lastId = files.length ? Number(files[files.length - 1].id) : 0;
+    const lastId = files.length? Math.max(...files.map(f => Number(f.id))): 0;
     const newId = lastId + 1;
     return newId
 }

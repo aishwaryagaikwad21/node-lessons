@@ -70,5 +70,13 @@
     "category": "images",
     "size": 124,
     "uploadedAt": "2025-10-09T09:26:22.468Z"
+  },
+  {
+    "id": 10,
+    "filename": "apple.jpeg",
+    "ext": ".jpeg",
+    "category": "images",
+    "size": 24,
+    "uploadedAt": "2025-10-09T09:34:22.466Z"
   }
 ]
