@@ -59,27 +59,58 @@ function getmonthWiseExpenses(month) {
 }
 
 function getRangeWiseExpenses(startDate, endDate) {
-    const data = loadData();
-    //convert date string to date object
-    const expenses = data.map(exp => ({
-        ...exp, //other  properties remains same
-        date: new Date(exp.date)
-    }))
+    try{
+        const {start, end} = {start: new Date(startDate), end: new Date(endDate)};
+        if(isNaN(start) || isNaN(end)) {
+            throw new Error("Invalid date format. Please use YYYY-MM-DD format.");
+        }
 
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    //filter range-wise expenses
-    const rangeWiseExpenses = expenses.filter(exp => 
-     exp.date >= new Date(start) && exp.date <= new Date(end)
-    )
-    return rangeWiseExpenses;
+        const data = loadData();
+        //convert date string to date object
+        const expenses = data.map(exp => ({
+            ...exp, //other  properties remains same
+            date: new Date(exp.date)
+        }))
+
+        //filter range-wise expenses
+        const rangeWiseExpenses = expenses.filter(exp => 
+        exp.date >= new Date(start) && exp.date <= new Date(end)
+        )
+        return {
+            rangeWiseExpenses,
+            success: true,
+            message: 'Expenses fetched successfully'
+        };
+    } catch (err) {
+        return { success: false, message: err.message }
+    }
 }
 
 //add data
 function addExpense(expense) {
-    const expenses = loadData();
-    expenses.push(expense);
-    saveData(expenses);
+    try{
+        const {date, item, category, amount} = expense;
+        if (!date || isNaN(new Date(date))) {
+            throw new Error("Invalid or missing 'date'. Must be in YYYY-MM-DD format.");
+        }
+        if (!item || typeof item !== 'string') {
+            throw new Error("Invalid or missing 'item'. Must be a string.");
+        }
+        if (!category || typeof category !== 'string') {
+            throw new Error("Invalid or missing 'category'. Must be a string.");
+        }
+        if (amount === undefined || typeof amount !== 'number') {
+            throw new Error("Invalid or missing 'amount'. Must be a number.");
+        }
+
+        const expenses = loadData();
+        expenses.push(expense);
+        saveData(expenses);
+        return { success: true, message: 'Expense added successfully'}
+    } catch (err) {
+        return { success: false, message: err.message }
+    }
+    
 }
 
 module.exports = {

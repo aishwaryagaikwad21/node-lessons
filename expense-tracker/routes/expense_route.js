@@ -7,13 +7,11 @@ router.get('/', (req, res) => {
     const expenses = expenseController.getExpenses();
 
     const {sort} = req.query;
-    if(sort === 'amount'){
+    if(sort === 'amount'){ //http://localhost:3000/expenses?sort=amount
         return res.json(expenseController.getAmountWiseExpenses());
     }
     res.json(expenses);
 })
-
-//get amount-expenses highest to lowest
 
 router.get('/category/:category', (req, res) => {
     const category = req.params.category;
@@ -33,15 +31,26 @@ router.get('/month/:month', (req, res) => { //http://localhost:3000/expenses/mon
 router.get('/range/:startDate/:endDate', (req, res) => {
     const {startDate, endDate} = req.params;
     //console.log(startDate, endDate) 
-    const expenses = expenseController.getRangeWiseExpenses(startDate, endDate);
-    res.json(expenses);
+    const result = expenseController.getRangeWiseExpenses(startDate, endDate);
+    if(result.success){
+        res.status(201).json({
+            expenses: result.rangeWiseExpenses,
+            message: result.message
+        })
+    } else {
+        res.status(400).json({error: result.message})
+    }
 })
 
 //add expense
 router.post('/add', (req, res) => {
     const expense = req.body;
-    expenseController.addExpense(expense);
-    res.status(201).send('Expense added successfully');
+    const result  = expenseController.addExpense(expense);
+    if (result.success) {
+        res.status(201).json({ message: result.message });
+    } else {
+        res.status(400).json({ error: result.message });
+    }
 })
 
 
