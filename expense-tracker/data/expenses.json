@@ -1,92 +1,219 @@
 [
   {
-    "date": "2025-10-01",
-    "item": "Groceries - Big Bazaar",
+    "date": "2025-01-05",
+    "item": "Groceries - D Mart",
     "category": "Food & Essentials",
-    "amount": 1250
+    "amount": 1450
   },
   {
-    "date": "2025-10-02",
-    "item": "Uber Ride to Office",
-    "category": "Transport",
-    "amount": 220
-  },
-  {
-    "date": "2025-10-02",
-    "item": "Morning Coffee",
-    "category": "Food & Essentials",
-    "amount": 80
-  },
-  {
-    "date": "2025-10-03",
-    "item": "Netflix Subscription",
-    "category": "Entertainment",
-    "amount": 499
-  },
-  {
-    "date": "2025-10-04",
+    "date": "2025-01-12",
     "item": "Electricity Bill",
     "category": "Utilities",
     "amount": 1320
   },
   {
-    "date": "2025-10-05",
-    "item": "Dinner at Café Coffee Day",
-    "category": "Food & Essentials",
-    "amount": 740
+    "date": "2025-01-18",
+    "item": "Movie Tickets - PVR",
+    "category": "Entertainment",
+    "amount": 780
   },
   {
-    "date": "2025-10-06",
+    "date": "2025-02-02",
     "item": "Petrol Refill",
     "category": "Transport",
-    "amount": 1100
+    "amount": 1050
   },
   {
-    "date": "2025-10-07",
+    "date": "2025-02-07",
+    "item": "Zomato - Dinner",
+    "category": "Food & Essentials",
+    "amount": 420
+  },
+  {
+    "date": "2025-02-15",
+    "item": "Spotify Subscription",
+    "category": "Entertainment",
+    "amount": 119
+  },
+  {
+    "date": "2025-03-03",
     "item": "Gym Membership Renewal",
     "category": "Health & Fitness",
     "amount": 2500
   },
   {
-    "date": "2025-10-08",
-    "item": "Online Course - Node.js",
+    "date": "2025-03-08",
+    "item": "Online Course - React.js",
     "category": "Education",
-    "amount": 1599
+    "amount": 1699
   },
   {
-    "date": "2025-10-09",
-    "item": "Amazon - Books",
-    "category": "Education",
-    "amount": 820
+    "date": "2025-03-20",
+    "item": "Dinner with Friends",
+    "category": "Entertainment",
+    "amount": 950
   },
   {
-    "date": "2025-10-10",
-    "item": "Zomato - Lunch",
+    "date": "2025-04-01",
+    "item": "Groceries - Big Bazaar",
     "category": "Food & Essentials",
-    "amount": 315
+    "amount": 1320
   },
   {
-    "date": "2025-10-10",
-    "item": "Mobile Recharge",
-    "category": "Utilities",
-    "amount": 299
-  },
-  {
-    "date": "2025-10-11",
-    "item": "Pharmacy - Vitamin Supplements",
-    "category": "Health & Fitness",
-    "amount": 480
-  },
-  {
-    "date": "2025-01-12",
+    "date": "2025-04-09",
     "item": "Train Ticket - Pune to Mumbai",
     "category": "Transport",
     "amount": 560
   },
   {
-    "date": "2025-03-13",
-    "item": "Lunch with Friends",
+    "date": "2025-04-21",
+    "item": "Udemy Course - Node.js",
+    "category": "Education",
+    "amount": 1499
+  },
+  {
+    "date": "2025-05-05",
+    "item": "Electricity Bill",
+    "category": "Utilities",
+    "amount": 1400
+  },
+  {
+    "date": "2025-05-12",
+    "item": "Lunch at Café Coffee Day",
+    "category": "Food & Essentials",
+    "amount": 320
+  },
+  {
+    "date": "2025-05-18",
+    "item": "Netflix Subscription",
     "category": "Entertainment",
+    "amount": 499
+  },
+  {
+    "date": "2025-06-03",
+    "item": "Petrol Refill",
+    "category": "Transport",
+    "amount": 1100
+  },
+  {
+    "date": "2025-06-10",
+    "item": "Doctor Consultation",
+    "category": "Health & Fitness",
+    "amount": 700
+  },
+  {
+    "date": "2025-06-22",
+    "item": "Amazon Books Purchase",
+    "category": "Education",
+    "amount": 850
+  },
+  {
+    "date": "2025-07-01",
+    "item": "Groceries - Reliance Fresh",
+    "category": "Food & Essentials",
+    "amount": 1550
+  },
+  {
+    "date": "2025-07-09",
+    "item": "Cab Ride",
+    "category": "Transport",
+    "amount": 450
+  },
+  {
+    "date": "2025-07-18",
+    "item": "Gym Membership",
+    "category": "Health & Fitness",
+    "amount": 2500
+  },
+  {
+    "date": "2025-08-05",
+    "item": "Electricity Bill",
+    "category": "Utilities",
+    "amount": 1375
+  },
+  {
+    "date": "2025-08-12",
+    "item": "Dinner with Family",
+    "category": "Food & Essentials",
     "amount": 890
+  },
+  {
+    "date": "2025-08-20",
+    "item": "Spotify Subscription",
+    "category": "Entertainment",
+    "amount": 119
+  },
+  {
+    "date": "2025-09-02",
+    "item": "Petrol Refill",
+    "category": "Transport",
+    "amount": 1070
+  },
+  {
+    "date": "2025-09-08",
+    "item": "Udemy Course - Node.js",
+    "category": "Education",
+    "amount": 1499
+  },
+  {
+    "date": "2025-09-15",
+    "item": "Cafe Snacks",
+    "category": "Food & Essentials",
+    "amount": 300
+  },
+  {
+    "date": "2025-10-03",
+    "item": "Groceries - Big Bazaar",
+    "category": "Food & Essentials",
+    "amount": 1400
+  },
+  {
+    "date": "2025-10-10",
+    "item": "Train Ticket - Mumbai to Pune",
+    "category": "Transport",
+    "amount": 560
+  },
+  {
+    "date": "2025-10-21",
+    "item": "Movie Tickets - PVR",
+    "category": "Entertainment",
+    "amount": 800
+  },
+  {
+    "date": "2025-11-05",
+    "item": "Electricity Bill",
+    "category": "Utilities",
+    "amount": 1350
+  },
+  {
+    "date": "2025-11-12",
+    "item": "Gym Renewal",
+    "category": "Health & Fitness",
+    "amount": 2500
+  },
+  {
+    "date": "2025-11-19",
+    "item": "Amazon Gifts Purchase",
+    "category": "Personal",
+    "amount": 950
+  },
+  {
+    "date": "2025-12-02",
+    "item": "Petrol Refill",
+    "category": "Transport",
+    "amount": 1200
+  },
+  {
+    "date": "2025-12-08",
+    "item": "Christmas Gifts",
+    "category": "Personal",
+    "amount": 3000
+  },
+  {
+    "date": "2025-12-24",
+    "item": "Dinner Party",
+    "category": "Food & Essentials",
+    "amount": 1800
   }
 ]
+

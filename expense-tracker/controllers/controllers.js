@@ -48,10 +48,26 @@ function getmonthWiseExpenses(month) {
     return monthWiseExpenses;
 }
 
-getmonthWiseExpenses("March");
+function getRangeWiseExpenses(startDate, endDate) {
+    const data = loadData();
+    //convert date string to date object
+    const expenses = data.map(exp => ({
+        ...exp, //other  properties remains same
+        date: new Date(exp.date)
+    }))
+
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    //filter range-wise expenses
+    const rangeWiseExpenses = expenses.filter(exp => 
+     exp.date >= new Date(start) && exp.date <= new Date(end)
+    )
+    return rangeWiseExpenses;
+}
 
 module.exports = {
     getExpenses,
     getCategoryWiseExpenses,
-    getmonthWiseExpenses
+    getmonthWiseExpenses,
+    getRangeWiseExpenses
 }
