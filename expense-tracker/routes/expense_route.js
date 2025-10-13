@@ -5,8 +5,15 @@ const expenseController = require('../controllers/controllers');
 //get all expenses
 router.get('/', (req, res) => {
     const expenses = expenseController.getExpenses();
+
+    const {sort} = req.query;
+    if(sort === 'amount'){
+        return res.json(expenseController.getAmountWiseExpenses());
+    }
     res.json(expenses);
 })
+
+//get amount-expenses highest to lowest
 
 router.get('/category/:category', (req, res) => {
     const category = req.params.category;

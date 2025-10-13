@@ -23,8 +23,18 @@ function saveData(data) {
 
 //get all expenses
 function getExpenses() {
-    return loadData();
+    const data = loadData();
+    const expenses = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+    return expenses;
 }
+
+//get amount-expenses highest to lowest
+function getAmountWiseExpenses() {
+    const data = loadData();
+    const expenses = data.sort((a, b) => b.amount - a.amount);
+    return expenses
+}
+
 
 //get category-wise expenses
 function getCategoryWiseExpenses(category) {
@@ -74,6 +84,7 @@ function addExpense(expense) {
 
 module.exports = {
     getExpenses,
+    getAmountWiseExpenses,
     getCategoryWiseExpenses,
     getmonthWiseExpenses,
     getRangeWiseExpenses,
