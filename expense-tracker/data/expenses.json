@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2025-10-01",
+    "item": "Groceries - Big Bazaar",
+    "category": "Food & Essentials",
+    "amount": 1250
+  },
+  {
+    "date": "2025-10-02",
+    "item": "Uber Ride to Office",
+    "category": "Transport",
+    "amount": 220
+  },
+  {
+    "date": "2025-10-02",
+    "item": "Morning Coffee",
+    "category": "Food & Essentials",
+    "amount": 80
+  },
+  {
+    "date": "2025-10-03",
+    "item": "Netflix Subscription",
+    "category": "Entertainment",
+    "amount": 499
+  },
+  {
+    "date": "2025-10-04",
+    "item": "Electricity Bill",
+    "category": "Utilities",
+    "amount": 1320
+  },
+  {
+    "date": "2025-10-05",
+    "item": "Dinner at Café Coffee Day",
+    "category": "Food & Essentials",
+    "amount": 740
+  },
+  {
+    "date": "2025-10-06",
+    "item": "Petrol Refill",
+    "category": "Transport",
+    "amount": 1100
+  },
+  {
+    "date": "2025-10-07",
+    "item": "Gym Membership Renewal",
+    "category": "Health & Fitness",
+    "amount": 2500
+  },
+  {
+    "date": "2025-10-08",
+    "item": "Online Course - Node.js",
+    "category": "Education",
+    "amount": 1599
+  },
+  {
+    "date": "2025-10-09",
+    "item": "Amazon - Books",
+    "category": "Education",
+    "amount": 820
+  },
+  {
+    "date": "2025-10-10",
+    "item": "Zomato - Lunch",
+    "category": "Food & Essentials",
+    "amount": 315
+  },
+  {
+    "date": "2025-10-10",
+    "item": "Mobile Recharge",
+    "category": "Utilities",
+    "amount": 299
+  },
+  {
+    "date": "2025-10-11",
+    "item": "Pharmacy - Vitamin Supplements",
+    "category": "Health & Fitness",
+    "amount": 480
+  },
+  {
+    "date": "2025-10-12",
+    "item": "Train Ticket - Pune to Mumbai",
+    "category": "Transport",
+    "amount": 560
+  },
+  {
+    "date": "2025-10-13",
+    "item": "Lunch with Friends",
+    "category": "Entertainment",
+    "amount": 890
+  }
+]
