@@ -23,6 +23,13 @@ function getExpenses() {
     return loadData();
 }
 
+//get category-wise expenses
+function getCategoryWiseExpenses(category) {
+    const expenses = loadData();
+    return expenses.filter(expense => expense.category === category);
+}
+
 module.exports = {
-    getExpenses
+    getExpenses,
+    getCategoryWiseExpenses
 }

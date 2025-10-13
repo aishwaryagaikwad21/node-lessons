@@ -8,5 +8,11 @@ router.get('/', (req, res) => {
     res.json(expenses);
 })
 
+router.get('/:category', (req, res) => {
+    const category = req.params.category;
+    const expenses = expenseController.getCategoryWiseExpenses(category);
+    res.json(expenses);
+})
+
 module.exports = router;
 
