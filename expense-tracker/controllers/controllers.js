@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const dayjs = require('dayjs');
+const customParseFormat = require("dayjs/plugin/customParseFormat");
+dayjs.extend(customParseFormat);
 
 //data file path
 const dataFilePath = path.join(__dirname, '../data/expenses.json');
@@ -29,7 +32,26 @@ function getCategoryWiseExpenses(category) {
     return expenses.filter(expense => expense.category === category);
 }
 
+function getmonthWiseExpenses(month) {
+    const data = loadData();
+    //convert date string to date object
+    const expenses = data.map(exp => ({
+        ...exp,
+        date: new Date(exp.date)
+    }))
+
+    //fetch month number from month name
+    const month_num = dayjs(`${month}`, "MMMM").month() + 1;
+    
+    //filter month-wise expenses
+    const monthWiseExpenses = expenses.filter(exp => (exp.date.getMonth() + 1) === month_num);
+    return monthWiseExpenses;
+}
+
+getmonthWiseExpenses("March");
+
 module.exports = {
     getExpenses,
-    getCategoryWiseExpenses
+    getCategoryWiseExpenses,
+    getmonthWiseExpenses
 }

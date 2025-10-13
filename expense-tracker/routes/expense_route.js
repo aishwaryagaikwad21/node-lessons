@@ -14,5 +14,13 @@ router.get('/:category', (req, res) => {
     res.json(expenses);
 })
 
+//get month-wise expenses
+router.get('/month/:month', (req, res) => { //http://localhost:3000/expenses/month/March
+    const month = req.params.month;
+    //console.log(month) - January, February, March, etc
+    const expenses = expenseController.getmonthWiseExpenses(month);
+    res.json(expenses);
+})
+
 module.exports = router;
 
