@@ -214,6 +214,11 @@
     "item": "Dinner Party",
     "category": "Food & Essentials",
     "amount": 1800
+  },
+  {
+    "date": "2025-12-31",
+    "item": "New Year Party",
+    "category": "Food & Essentials",
+    "amount": 2500
   }
 ]
-

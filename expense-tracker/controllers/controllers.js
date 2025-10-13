@@ -65,9 +65,17 @@ function getRangeWiseExpenses(startDate, endDate) {
     return rangeWiseExpenses;
 }
 
+//add data
+function addExpense(expense) {
+    const expenses = loadData();
+    expenses.push(expense);
+    saveData(expenses);
+}
+
 module.exports = {
     getExpenses,
     getCategoryWiseExpenses,
     getmonthWiseExpenses,
-    getRangeWiseExpenses
+    getRangeWiseExpenses,
+    addExpense
 }

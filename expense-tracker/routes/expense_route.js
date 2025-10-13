@@ -28,7 +28,15 @@ router.get('/range/:startDate/:endDate', (req, res) => {
     //console.log(startDate, endDate) 
     const expenses = expenseController.getRangeWiseExpenses(startDate, endDate);
     res.json(expenses);
-}) 
+})
+
+//add expense
+router.post('/add', (req, res) => {
+    const expense = req.body;
+    expenseController.addExpense(expense);
+    res.status(201).send('Expense added successfully');
+})
+
 
 module.exports = router;
 
